@@ -4,7 +4,7 @@ import { CategoryIntruduce } from '@components/section/CategoryIntruduce';
 import { ClassIntroduce } from '@components/section/ClassIntroduce';
 import { Footer } from '@components/section/Footer';
 import { Service } from '@components/section/Service';
-import { Thumnail } from '@components/section/TestThumnail';
+import { Thumnail } from '@components/section/Thumnail';
 import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
 import { Scroll } from 'scrollex';
@@ -12,8 +12,8 @@ import { Scroll } from 'scrollex';
 export default function Home() {
   return (
     <CommonLayout>
-      <Scroll.Container scrollAxis="y" style={{ maxHeight: '100vh' }}>
-        <Scroll.Section style={{ overflow: 'scroll' }}>
+      <Scroll.Container id="main" scrollAxis="y" style={{ maxHeight: '100vh' }}>
+        <Scroll.Section style={{ overflowY: 'scroll' }}>
           <Thumnail />
           <About />
           <ClassIntroduce />
