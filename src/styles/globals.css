@@ -1,0 +1,27 @@
+html,
+body {
+  font-family: 'Noto Serif KR', serif;
+  padding: 0;
+  margin: 0;
+}
+.normal {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 700;
+}
+.bolder {
+  font-weight: 800;
+}
+.light {
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
