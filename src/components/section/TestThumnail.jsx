@@ -3,47 +3,48 @@ import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
 import { Keyframes, Scroll } from 'scrollex';
 
+const springs = {
+  translateY: {
+    damping: 100,
+    stiffness: 1200,
+    mass: 8,
+  },
+};
+
 const keyframes = {
-  container: ({ maxScrollPosition }) => ({
-    0: {
-      translateY: 50,
-    },
-    [maxScrollPosition]: {
-      translateY: -50,
-    },
-  }),
-  item: ({ data }) => ({
+  heading: ({ section, data }) => ({
     [data.index * 150]: {
-      translateY: 35,
+      translateY: 10,
     },
-    [data.index * 150 + 400]: {
-      translateY: -35,
+    [data.index * 150 + 350]: {
+      translateY: -10,
     },
   }),
 };
 
 export const Thumnail = () => {
   return (
-    <Container>
-      <ContentContainer>
-        <TitleWrapper>
-          <Title>
-            원하는 바디를 만들어드려요
-            <br />
-            오늘부터 원트 필라테스와 시작하세요
-          </Title>
+    <ImageContainer>
+      <TitleContainer>
+        <Item
+          keyframes={keyframes.heading}
+          springs={springs}
+          data={{ index: 0 }}>
+          <Content>원하는 바디를 만들어드려요</Content>
+          <Content>오늘부터 원트 필라테스와 시작하세요</Content>
+        </Item>
+        <Item
+          keyframes={keyframes.heading}
+          springs={springs}
+          data={{ index: 1 }}>
           <MoveButton>DETAIL PROCESS</MoveButton>
-        </TitleWrapper>
-        {/* <MoveButton>DETAIL PROCESS</MoveButton> */}
-      </ContentContainer>
-    </Container>
+        </Item>
+      </TitleContainer>
+    </ImageContainer>
   );
 };
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-
+const ImageContainer = styled.div`
   background-image: url('/img/pc_mainbackground.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -56,31 +57,34 @@ const Container = styled.div`
   }
 `;
 
-const ContentContainer = styled.div`
-  display: flex;
-  flex: 1;
+// const ContentContainer = styled(Scroll.Container)`
+//   display: flex;
+//   flex: 1;
 
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// `;
+
+const TitleContainer = styled.div`
+  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
+
+  ${breakPoints.sm} {
+    height: 50vh;
+  }
 `;
 
-const TitleWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
+const Item = styled(Scroll.Item)``;
 
-const Title = styled.div`
-  display: flex;
+const Content = styled.div`
   text-align: center;
   color: #fff;
   font: normal normal normal 72px/100px Noto Serif KR;
   font-weight: 500;
   letter-spacing: -0.12px;
-  margin-bottom: 72px;
 
   ${breakPoints.sm} {
     font: normal normal normal 24px/32px Noto Serif KR;
@@ -105,6 +109,9 @@ const MoveButton = styled.button`
   padding-bottom: 16px;
   padding-left: 48px;
   padding-right: 48px;
+  margin-top: 48px;
+  margin-left: auto;
+  margin-right: auto;
   color: #fff;
   font: normal normal normal 36px/50px Noto Serif KR;
   font-weight: 200;
@@ -144,4 +151,12 @@ const MoveButton2 = styled.button`
     word-break: keep-all;
     margin-bottom: 128px;
   }
+`;
+
+const TitleWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
 `;

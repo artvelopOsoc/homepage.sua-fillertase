@@ -9,7 +9,7 @@ import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
 import { Scroll } from 'scrollex';
 
-export default function Hello() {
+export default function test() {
   return (
     <CommonLayout>
       <Scroll.Container scrollAxis="y" style={{ maxHeight: '100vh' }}>
