@@ -26,5 +26,6 @@ const Container = styled.div`
   align-items: center;
   ${breakPoints.sm} {
     flex-direction: column;
+    background-attachment: inherit;
   }
 `;

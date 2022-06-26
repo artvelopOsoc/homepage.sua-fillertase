@@ -60,7 +60,7 @@ const ImageContainer = styled.div`
   width: 100vw;
   height: 100vh;
   ${breakPoints.sm} {
-    background-image: url('/img/pc_mainbackground.png');
+    background-attachment: inherit;
     height: 50vh;
   }
 `;
