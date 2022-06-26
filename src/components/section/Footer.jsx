@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
+import { themeColor } from '@constants/themeColor';
 
 export const Footer = () => {
   return (
@@ -29,7 +30,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #a8dff8;
+  /* background-color: #a8dff8; */
+  background-color: ${themeColor.beige};
   min-height: 30vh;
   width: 100vw;
 

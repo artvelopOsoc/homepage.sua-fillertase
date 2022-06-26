@@ -4,6 +4,7 @@ import { breakPoints } from '@utils/breakpoints';
 import { Keyframes, Scroll } from 'scrollex';
 import { motion } from 'framer-motion';
 import { useViewportObserver } from '../../hooks/useViewportObserver';
+import { themeColor } from '@constants/themeColor';
 
 export const About = () => {
   const { visible, viewTarget } = useViewportObserver();
@@ -38,7 +39,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffc85d;
+  /* background-color: #ffc85d; */
+  background-color: ${themeColor.skin};
   min-height: 50vh;
   width: 100vw;
 

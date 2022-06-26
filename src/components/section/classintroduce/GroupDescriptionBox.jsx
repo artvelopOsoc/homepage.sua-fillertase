@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
 import { useViewportObserver } from '@hooks/useViewportObserver';
 import { motion } from 'framer-motion';
+import { themeColor } from '@constants/themeColor';
 
 export const GroupDescriptionBox = () => {
   const { visible, viewTarget } = useViewportObserver();
@@ -26,7 +27,8 @@ export const GroupDescriptionBox = () => {
 };
 
 const Container = styled.div`
-  background-color: #87edb2;
+  /* background-color: #87edb2; */
+  background-color: ${themeColor.pink};
   padding: 24px;
   display: flex;
   flex-direction: column;

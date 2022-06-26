@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
 import { useViewportObserver } from '@hooks/useViewportObserver';
 import { motion } from 'framer-motion';
+import { themeColor } from '@constants/themeColor';
 
 export const Service = () => {
   const { visible, viewTarget } = useViewportObserver();
@@ -45,7 +46,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fdd0c0;
+  /* background-color: #fdd0c0; */
+  background-color: ${themeColor.skin};
   min-height: 50vh;
   width: 100vw;
 

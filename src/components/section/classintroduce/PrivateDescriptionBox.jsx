@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
 import { motion } from 'framer-motion';
 import { useViewportObserver } from '@hooks/useViewportObserver';
+import { themeColor } from '@constants/themeColor';
 
 export const PrivateDescriptionBox = () => {
   const { visible, viewTarget } = useViewportObserver();
@@ -26,7 +27,8 @@ export const PrivateDescriptionBox = () => {
 };
 
 const Container = styled.div`
-  background-color: #4cbade;
+  /* background-color: #4cbade; */
+  background-color: ${themeColor.beige};
   padding: 24px;
   display: flex;
   flex-direction: column;
