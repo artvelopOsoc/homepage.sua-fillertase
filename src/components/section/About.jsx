@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { breakPoints } from '@utils/breakpoints';
-import { Keyframes, Scroll } from 'scrollex';
 import { motion } from 'framer-motion';
 import { useViewportObserver } from '../../hooks/useViewportObserver';
 import { themeColor } from '@constants/themeColor';
