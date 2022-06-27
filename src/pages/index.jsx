@@ -5,8 +5,6 @@ import { ClassIntroduce } from '@components/section/ClassIntroduce';
 import { Footer } from '@components/section/Footer';
 import { Service } from '@components/section/Service';
 import { Thumnail } from '@components/section/Thumnail';
-import styled from '@emotion/styled';
-import { breakPoints } from '@utils/breakpoints';
 import { Scroll } from 'scrollex';
 
 export default function Home() {
